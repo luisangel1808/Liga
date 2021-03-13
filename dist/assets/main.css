@@ -175,10 +175,9 @@ body {
     text-align: justify;
 }
 .Videos{
-    margin-top: 10px;
-    top: 60px;
+    margin-top: 70px;
     width: 100%;
-    min-height: 100%;
+    min-height: inherit;
     display: inline-block;
     text-align:  center;
 }
@@ -336,6 +335,103 @@ tbody tr:nth-child(odd) {
     min-height: 85vh;
     display: flex;
     justify-content:center;
+}
+.AddPlayer{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.AddPlayer form{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    align-items: center;
+}
+
+.AddPlayer input{
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 70vw;
+}
+
+.AddPlayerinput::placeholder{
+    color: blue;
+}
+
+.AddPlayer button{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.NewTournament{
+    position: relative;
+    margin-top: 80px;
+    width: 100%;
+    min-height: 90vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.NewTournament button{
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.tableTournament{    
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: left;       
+ }
+
+.tableTournament a{
+    text-decoration: none;
+ }
+.pagination{
+   display: flex;
+   justify-content: space-around;
+}
+.tableTournament thead th {
+    background-color:rgb(195, 211, 240);
+    color: rgb(12, 8, 59);
+    padding: 10px;
+ }
+   
+ .tableTournament thead th:nth-child(1) {
+    width: 10%;
+ }
+   
+ .tableTournament thead th:nth-child(2) {
+    width: 20%;
+ }
+  
+ .tableTournament thead th:nth-child(3) {
+    width: 25%;
+ }
+   
+ .tableTournament thead th:nth-child(4) {
+    width: 45%;
+ }
+  
+ .tableTournament thead th:nth-child(5) {
+    width: 20%;
+ }
+
+.Tournament{
+    min-height: inherit;
+    display: flex;
+    margin-top: 80px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+@media (min-width: 800px) {
+    .Tournament{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 body{
     min-height: 100vh;

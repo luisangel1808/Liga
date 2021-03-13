@@ -23,7 +23,6 @@ const Clasification = () => {
     4433491,
     4412397,
     4401522,
-    ,
     4457420,
     4414861,
     4402898,
@@ -38,6 +37,7 @@ const Clasification = () => {
     4454553,
   ];
   const players = codes.map((pl) => usePlayers(API, pl, part2));
+  //const players = usePlayers2(API, codes, part2)
   const dataTHead = ['Nombre', ' ', 'Clásico', 'Activo', 'Blitz', 'Año'];
   return (
     <div className="Clasification">
