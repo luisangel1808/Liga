@@ -17,25 +17,25 @@ const Header = () => {
         </Link>
         <ul className={`menu ${menu ? 'active' : 'inactive'}`}>
           <li className="item">
-            <Link to="./videos" onClick={() => setMenu(false)}>
+            <Link to="/videos" onClick={() => setMenu(false)}>
               Vídeos
             </Link>
           </li>
           <li className="item">
-            <Link to="./players" onClick={() => setMenu(false)}>
+            <Link to="/players" onClick={() => setMenu(false)}>
               Jugadores
             </Link>
           </li>
           <li className="item">
-            <Link to="./clasification" onClick={() => setMenu(false)}>
+            <Link to="/clasification" onClick={() => setMenu(false)}>
               Clasificación
             </Link>
           </li>
           <li className="item" onClick={() => setMenu(false)}>
-            <Link to="./lichess">Datos Lichess</Link>
+            <Link to="/lichess">Datos Lichess</Link>
           </li>
           <li className="item" onClick={() => setMenu(false)}>
-            <Link to="./newTournament">Crear Torneo</Link>
+            <Link to="/newTournament">Crear Torneo</Link>
           </li>
           <li className="toggle">
             <FontAwesomeIcon
