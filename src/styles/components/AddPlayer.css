@@ -1,0 +1,29 @@
+.AddPlayer{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.AddPlayer form{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    align-items: center;
+}
+
+.AddPlayer input{
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 70vw;
+}
+
+.AddPlayerinput::placeholder{
+    color: blue;
+}
+
+.AddPlayer button{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}

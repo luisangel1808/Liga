@@ -1,0 +1,19 @@
+.Video-container{
+    position: relative;
+    padding-top: 56.25%;
+}
+.Video-container-player{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Video h4{
+    text-align: center;
+}
+
+.Video{
+    position: relative;
+    margin-top: 60px;
+    width: 100%;
+    min-height: 100vh;
+}

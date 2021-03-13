@@ -1,0 +1,20 @@
+.Players{
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 100%;
+}
+.Players-container-outstanding{
+    margin: 5px;
+    padding: 10px;
+    display: flex;    
+    justify-content: center;
+    text-align: center; 
+    flex-wrap: wrap;  
+}
+.Players-title-outstanding{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    margin-top: 10px;
+}
