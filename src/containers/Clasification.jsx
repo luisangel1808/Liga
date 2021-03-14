@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/Clasification.css';
-import usePlayers from '../hooks/usePlayers';
+import usePlayersAxios from '../hooks/usePlayersAxios';
 import Table from '../components/TableF';
 const Clasification = () => {
   const API = 'https://fide-ratings-scraper.herokuapp.com/player/';
@@ -36,14 +36,22 @@ const Clasification = () => {
     4421876,
     4454553,
   ];
-  const players = codes.map((pl) => usePlayers(API, pl, part2));
-  //const players = usePlayers2(API, codes, part2)
+  const players = usePlayersAxios(API, codes, part2);
   const dataTHead = ['Nombre', ' ', 'Clásico', 'Activo', 'Blitz', 'Año'];
-  return (
-    <div className="Clasification">
-      <Table players={players} dataTHead={dataTHead} />
-    </div>
-  );
+  if(players.length>0){
+    return (
+      <div className="Clasification">
+        <Table players={players} dataTHead={dataTHead} />
+      </div>
+    );
+  }
+  else{
+    return (
+      <div className="Clasification">
+        <h2>Cargando datos de Ratings Fide, por favor espere</h2>
+      </div>
+    )
+  }
 };
 
 export default Clasification;

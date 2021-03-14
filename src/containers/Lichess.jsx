@@ -1,5 +1,5 @@
 import React from 'react';
-import usePlayers from '../hooks/usePlayers';
+import usePlayersAxios from '../hooks/usePlayersAxios';
 import Table from '../components/TableL';
 import '../styles/components/Lichess.css';
 const Lichess = () => {
@@ -16,19 +16,22 @@ const Lichess = () => {
     'zaito0630',
     'lscardona',
   ];
-  //const players =  usePlayers(API,playersLichess);
-  const players = playersLichess.map((pl) => usePlayers(API, pl));
+  const players =  usePlayersAxios(API,playersLichess);
   const dataTHead = ['Usuario', ' ', 'Nombre', 'Blitz', 'Bala', 'Partidas'];
-
-  //const body = players.map(p=>(
-  //      [p.username, p.online, p.profile.firstName,p.perfs.blitz.rating,p.perfs.bullet.rating,p.username]
-  //))
-
-  return (
-    <div className="Lichess">
-      <Table players={players} dataTHead={dataTHead} />
-    </div>
-  );
+  if(players.length>0){
+    return (
+      <div className="Lichess">
+        <Table players={players} dataTHead={dataTHead} />
+      </div>
+    );
+  }
+  else{
+    return (
+      <div className="Lichess">
+        <h2>Cargando datos de Lichess, por favor espere</h2>
+      </div>
+    )
+  }
 };
 
 export default Lichess;
