@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import useOnePlayer from '../hooks/useOnePlayer';
 const useGamesData = () => {
   const [state, setState] = useState({
     games: [],
@@ -29,7 +29,19 @@ const useGamesData = () => {
     setState({});
   };
 
-  const addToPlayersList = (payload) => {
+  const addToPlayersList = async(payload) => {
+    const API = 'https://fide-ratings-scraper.herokuapp.com/player/';
+    const part2 = '/info';
+    const data = await useOnePlayer(API,payload.codFide,part2);
+    if (data) {
+      payload.standard_elo = data.standard_elo;
+      payload.rapid_elo = data.rapid_elo;
+      payload.blitz_elo = data.blitz_elo;
+      payload.name = data.name;
+      payload.sex = data.sex;
+      payload.birth_year = data.birth_year
+    }
+
     setState({
       ...state,
       playersList: [...state.playersList, payload],
