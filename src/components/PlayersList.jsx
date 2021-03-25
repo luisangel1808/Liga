@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import '../styles/components/Table.css';
+import '../styles/components/PlayersList.css';
 const PlayersList = () => {
   const {
     state: { playersList },
