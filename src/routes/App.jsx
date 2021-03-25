@@ -6,7 +6,7 @@ import Home from '../containers/Home';
 import Videos from '../containers/Videos';
 import Video from '../components/Video';
 import Players from '../containers/Players';
-import Clasification from '../containers/Clasification';
+import ClasificationScrapped from '../containers/ClasificationScrapped';
 import Lichess from '../containers/Lichess';
 import NotFound from '../containers/NotFound';
 import NewTournament from '../containers/NewTournament';
@@ -25,7 +25,8 @@ const App = () => {
             <Route exact path="/players" component={Players} />
             <Route exact path="/videos" component={Videos} />
             <Route exact path="/video/:id" component={Video} />
-            <Route exact path="/clasification" component={Clasification} />
+            {/*<Route exact path="/clasification" component={Clasification} />*/}
+            <Route exact path="/clasification" component={ClasificationScrapped} />
             <Route exact path="/lichess" component={Lichess} />
             <Route exact path="/newTournament" component={NewTournament} />
             <Route exact path="/tournament" component={Tournament} />
