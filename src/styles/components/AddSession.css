@@ -1,0 +1,86 @@
+.AddSession{
+    position: relative;
+    margin-top: 60px;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choosed{
+    background-color: azure;
+    padding: 5px;
+    width: max-content;
+    height: max-content;
+    border-radius: 10px;
+    border:1px solid black;
+    margin: 5px;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.AddSession form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 50%;
+    padding: 20px;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    min-width: 300px;
+}
+.AddSession button{
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    margin:5px;
+}
+select{
+    padding: 5px;
+    text-align: center;
+}
+.AddSession h3{
+    text-align: center;
+}
+.description{
+    width: 100%;
+    height: 150px;
+    word-wrap: break-word;
+}
+input{
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+textarea{
+    padding: 5px;
+}
+.AddSession table{    
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 90%;    
+ }
+
+.AddSession thead th:nth-child(1) {
+    width: 9%;
+ }
+   
+.AddSession thead th:nth-child(2) {
+    width: 14%;
+ }
+  
+.AddSession thead th:nth-child(3) {
+    width: 14%;
+ }
+   
+.AddSession thead th:nth-child(4) {
+    width: 29%;
+ }
+  
+.AddSession thead th:nth-child(5) {
+    width: 19%;
+}
+.AddSession thead th:nth-child(6) {
+    width: 5%;
+}

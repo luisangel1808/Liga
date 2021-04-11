@@ -37,6 +37,12 @@ const Header = () => {
           <li className="item" onClick={() => setMenu(false)}>
             <Link to="/newTournament">Crear Torneo</Link>
           </li>
+          <li className="item" onClick={() => setMenu(false)}>
+            <Link to="/admPlayers">Adm jugadores</Link>
+          </li>
+          <li className="item" onClick={() => setMenu(false)}>
+            <Link to="/addSession">Sesiones</Link>
+          </li>
           <li className="toggle">
             <FontAwesomeIcon
               icon={menu ? faTimes : faBars}

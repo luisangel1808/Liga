@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useOnePlayer from '../hooks/useOnePlayer';
+import {db} from '../firebase';
 const useGamesData = () => {
   const [state, setState] = useState({
     games: [],
@@ -41,7 +42,13 @@ const useGamesData = () => {
       payload.sex = data.sex;
       payload.birth_year = data.birth_year
     }
+    await db.collection('players').doc().set(payload);
+    /*toast('Jugador añadido', {
+        type:'success'
+    });*/
+  };
 
+  const addToPlayersListT = async(payload) => {
     setState({
       ...state,
       playersList: [...state.playersList, payload],
@@ -144,6 +151,7 @@ const useGamesData = () => {
     createFixture,
     updateClasification,
     addToPlayersList,
+    addToPlayersListT,
   };
 };
 

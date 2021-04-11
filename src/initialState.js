@@ -7,6 +7,10 @@ export default {
         'Actualmente el jugador con más elo activo y blitz en el departamento, tiene 25 años de edad y busca conseguir el título de MF llegando a los 2300 en los próximos meses.',
       title: '',
       picture: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
+      club: 'José Raúl Capablanca',
+      league: 'Liga caucana de ajedrez',
+      fideCod: 4416856,
+      lichess: 'luisangel1808'
     },
     {
       id: 2,
@@ -15,6 +19,10 @@ export default {
         'Primer maestro Fide del Cauca, actualmente es el entrenador departamental.',
       title: 'MF',
       picture: 'https://i.ibb.co/YB3HmD2/Navia.jpg',
+      club: 'José Raúl Capablanca',
+      league: 'Liga caucana de ajedrez',
+      fideCod: 4402898,
+      lichess: 'Matesote'
     },
     {
       id: 3,
@@ -23,6 +31,10 @@ export default {
         'Jóven y talentoso jugador, actualmente es el campeón nacional online sub 18.',
       title: 'CM',
       picture: 'https://i.ibb.co/dDPy06r/JorgeE.jpg',
+      club: 'Kasparov',
+      league: 'Liga caucana de ajedrez',
+      fideCod: 4430646,
+      lichess: 'JorgeTobar01'
     },
     {
       id: 4,
@@ -31,14 +43,22 @@ export default {
         'Primera jugadora en alcanzar el título de WFM, cuenta con múltiples logros nacionales e internacionales.',
       title: 'WFM',
       picture: 'https://i.ibb.co/94VW58w/Lina.png',
+      club: '---',
+      league: 'Liga caldense de ajedrez',
+      fideCod: 4419324,
+      lichess: 'lscardona'
     },
     {
       id: 5,
       name: 'Julian Andrés Muñoz Hernández',
       description:
-        'Fuerte jugador ha alcanzado uno de los elos más altos del departamento. ',
+        'Fuerte jugador ha alcanzado uno de los elos más altos del departamento.',
       title: 'CM',
       picture: 'https://i.ibb.co/j8yFRtc/Julian.png',
+      club: 'Kasparov',
+      league: 'Liga caucana de ajedrez',
+      fideCod: 4402324,
+      lichess: 'juliandres7777'
     },
   ],
   videos: [
