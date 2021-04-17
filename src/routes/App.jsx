@@ -14,6 +14,8 @@ import NewTournament from '../containers/NewTournament';
 import Tournament from '../containers/Tournament';
 import AdmPlayers from '../containers/AdmPlayers';
 import useGamesData from '../hooks/useGamesData';
+import Login from '../components/Login';
+import SignUp from '../components/SignUp';
 import '../styles/components/App.css';
 const App = () => {
   const initialState = useGamesData();
@@ -33,6 +35,8 @@ const App = () => {
             <Route exact path="/tournament" component={Tournament} />
             <Route exact path="/addSession" component={AddSession} />
             <Route exact path="/admPlayers" component={AdmPlayers} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

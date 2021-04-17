@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logoLiga from '../assets/static/logoLiga.jpg';
 import '../styles/components/Header.css';
@@ -43,6 +42,13 @@ const Header = () => {
           <li className="item" onClick={() => setMenu(false)}>
             <Link to="/addSession">Sesiones</Link>
           </li>
+{/*       <li className="item" onClick={() => setMenu(false)}>
+            <Link to="/login">
+              <FontAwesomeIcon
+                icon={faUser}
+              />
+            </Link>
+          </li> */}
           <li className="toggle">
             <FontAwesomeIcon
               icon={menu ? faTimes : faBars}

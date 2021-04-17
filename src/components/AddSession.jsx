@@ -60,12 +60,13 @@ const AddSession = () => {
        })
     }
     const deleteSession = async (id) =>{
-        if(window.confirm('Seguro que quieres borrar está sesión')){
-            await db.collection('sessions').doc(id).delete();
-            toast('Sesión añadida', {
-                type:'error'
-            });
-        }
+        // if(window.confirm('Seguro que quieres borrar está sesión')){
+        //     await db.collection('sessions').doc(id).delete();
+        //     toast('Sesión añadida', {
+        //         type:'error'
+        //     });
+        // }
+        alert('No estás autorizado para borrar');
     }
 
     useEffect(() => {

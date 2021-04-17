@@ -1,7 +1,7 @@
 footer{
     outline:1px solid salmon;
     height: 3rem; 
-    margin-top:calc(5% + 10px);
+
     width: 100%;
     display: flex;
     padding: 4px;

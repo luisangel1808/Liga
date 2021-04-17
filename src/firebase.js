@@ -1,7 +1,7 @@
-
   import firebase from 'firebase/app';
   import 'firebase/firestore';
-  var firebaseConfig = {
+  import 'firebase/auth';
+  const firebaseConfig = {
     apiKey: "AIzaSyAI7z3y0VSclseQzGHdhkAyY1La2Dz-7hY",
     authDomain: "licajedrez.firebaseapp.com",
     databaseURL: "https://licajedrez-default-rtdb.firebaseio.com",
@@ -13,3 +13,4 @@
   // Initialize Firebase
   const fb = firebase.initializeApp(firebaseConfig);
   export const db = fb.firestore();
+  export const auth = fb.auth();
