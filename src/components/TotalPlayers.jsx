@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/components/PlayersList.css';
 import {db} from '../firebase';
 import { faWindowClose} from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,9 @@ const TotalPlayers = () => {
                setPlayers(docs);
       })
    }
-   getPlayers();
+   useEffect(() => {
+    getPlayers();
+}, []);
 
   return (
     <div className="PlayersList">

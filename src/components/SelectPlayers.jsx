@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {db} from '../firebase';
 import AppContext from '../context/AppContext';
 
@@ -16,10 +16,15 @@ const SelectPlayers = () => {
                setPlayers(docs);
       })
    }
-   const handleSubmit = async() => {
+   const handleSubmit = ()=> {
     addToPlayersListT(selected);
   };
-   getPlayers();
+  useEffect(() => {
+    getPlayers();
+  }, []);   
+  useEffect(() => {
+    setSelected(players[0])
+  }, [players]);
     return (
         <div>
                 <h3>Añade jugador</h3>

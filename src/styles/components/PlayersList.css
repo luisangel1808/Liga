@@ -2,12 +2,13 @@
     display: block;
     overflow-x: auto;
     width: 100vw;
+    padding-inline: 10px;
 }
 
 .PlayersList table{    
     table-layout: fixed;
     border-collapse: collapse;
-    width: 99%;    
+    width: 99%;  
  }
 
 .PlayersList thead th:nth-child(1) {

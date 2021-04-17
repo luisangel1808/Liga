@@ -3,7 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import '../styles/components/AddSession.css';
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {db} from '../firebase';
 import { faWindowClose} from '@fortawesome/free-solid-svg-icons';
 import { faEdit} from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +19,7 @@ const AddSession = () => {
     const [players, setPlayers] = useState([]);
     const [currentId, setCurrentId] = useState('');
 
-
+    toast.configure();
     const form = useRef(null);
 
     const handleSubmit = async (e) => {
@@ -31,11 +32,17 @@ const AddSession = () => {
           endD: formData.get('endD'),
           description: formData.get('description'),
         };
-        console.log(newSession);
+        setChoosed([]);
         await db.collection('sessions').doc().set(newSession);
-        toast('Sesión añadida', {
-            type:'success'
-        });
+        toast('😜 Sesión añadida!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
       };  
     
     const getPlayers = async () =>{
@@ -44,11 +51,17 @@ const AddSession = () => {
                const docs = [];
                querySnapshot.forEach(doc=>{
                    docs.push({...doc.data()}.name);
+                   setPlayers(docs);
                });
-               setPlayers(docs);
       })
    }
-   getPlayers();
+   useEffect(() => {
+        getPlayers();
+   }, []);
+   useEffect(() => {
+        setSelected(players[0])
+   }, [players]);
+   
     const getSessions = async () =>{
          db.collection('sessions')
             .onSnapshot((querySnapshot)=>{
@@ -60,25 +73,45 @@ const AddSession = () => {
        })
     }
     const deleteSession = async (id) =>{
-        // if(window.confirm('Seguro que quieres borrar está sesión')){
-        //     await db.collection('sessions').doc(id).delete();
-        //     toast('Sesión añadida', {
-        //         type:'error'
-        //     });
-        // }
+/*          if(window.confirm('Seguro que quieres borrar está sesión')){
+             await db.collection('sessions').doc(id).delete();
+             toast('😜 Sesión eliminada!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+         } */
         alert('No estás autorizado para borrar');
     }
 
     useEffect(() => {
         getSessions();
     }, []);
+
+    const addPlayer = () =>{
+        if(!choosed.includes(selected)){
+            setChoosed([...choosed, selected])
+        }
+    }
+
+    const deSelect = (player)=>{
+        const idx = choosed.indexOf(player);
+        const newArray = choosed;
+        newArray.splice(idx, 1);
+        setChoosed([newArray]);
+    }
+
     return (
         <section className="AddSession">
             <h1>Registrar sesión de entreno</h1>
             <form ref={form} onSubmit={handleSubmit}> 
                 <h3>Añade jugador</h3>
                 <select onChange={(e) => setSelected(e.target.value)}>{players.map((player,index) => <option key={index}>{player}</option>)}</select>
-                <button type="button" onClick={()=>setChoosed([...choosed, selected])}>Añadir jugador</button>
+                <button type="button" onClick={()=>addPlayer()}>Añadir jugador</button>
                 <h3>Día</h3>
                 <DatePicker name="day" selected={day} onChange={date => setDay(date)} />
                 <h3>Desde</h3>
@@ -108,7 +141,7 @@ const AddSession = () => {
            
             <div className="list">
                 {choosed.map((player)=>(
-                        <div className="choosed" onClick={()=>setChoosed}>
+                        <div className="choosed" onClick={()=>deSelect(player)}>
                             {player}
                         </div>
                 ))}
@@ -150,7 +183,4 @@ const AddSession = () => {
     )
 }
 
-export default AddSession;
-
-    
-
+export default AddSession; 

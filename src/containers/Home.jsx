@@ -7,8 +7,6 @@ import lig1 from '../assets/static/lig1.jpg';
 import lig2 from '../assets/static/lig2.jpg';
 import lig3 from '../assets/static/lig3.jpg';
 
-
-
 const images = [
   {src:lig1, sizes: '(max-width: 1000px) 1000px, (max-width: 2000px) 1000px, 1000px'},
   {src:lig2},

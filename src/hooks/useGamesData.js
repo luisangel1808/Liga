@@ -43,16 +43,15 @@ const useGamesData = () => {
       payload.birth_year = data.birth_year
     }
     await db.collection('players').doc().set(payload);
-    /*toast('Jugador añadido', {
-        type:'success'
-    });*/
   };
 
   const addToPlayersListT = async(payload) => {
-    setState({
-      ...state,
-      playersList: [...state.playersList, payload],
-    });
+    if(!state.playersList.includes(payload)){
+      setState({
+        ...state,
+        playersList: [...state.playersList, payload],
+      });
+    }
   };
 
   const generateFixture = (players) => {
