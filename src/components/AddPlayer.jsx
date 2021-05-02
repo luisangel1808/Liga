@@ -13,7 +13,7 @@ const addPlayer = () => {
   
 
   const validateC = async()=>{
-      toast.configure();
+   
       const pl = await validateCode(code);
       setValidate(true);
       setPlayer(pl);
