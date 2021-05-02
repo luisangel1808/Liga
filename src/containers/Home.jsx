@@ -18,8 +18,7 @@ const Home = () => (
     <div className="Home-container">
       <h1>Bienvenido al sitio web del ajedrez caucano</h1>
       <p>
-        Aquí encontrarás información importante sobre este deporte en nuestra
-        región
+        El lugar para los amantes del juego ciencia de la región.
       </p>
     </div>
     <div className="Home_imgs">

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import initialState from '../initialState';
 import VideoMini from '../components/VideoMini';
 import '../styles/components/Videos.css';
+import AppContext from '../context/AppContext';
 
 const Videos = () => {
+  const { state } = useContext(AppContext);
   const [videos, setVideos] = useState(initialState.videos);
   const handleSearch = (value) => {
     let searched = initialState.videos.filter((video) =>
@@ -12,20 +14,21 @@ const Videos = () => {
     setVideos(searched);
   };
 
-  return (
-    <section className="Videos">
-      <input
-        name="search"
-        type="text"
-        placeholder="¿Qué quieres ver hoy?"
-        onChange={(e) => handleSearch(e.target.value)}
-      />
-      <div className="Videos-container">
-        {videos.map((video) => (
-          <VideoMini key={video.id} video={video} />
-        ))}
-      </div>
-    </section>
-  );
+    return (
+      <section className="Videos">
+        <input
+          name="search"
+          type="text"
+          placeholder="¿Qué quieres ver hoy?"
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+        <div className="Videos-container">
+          {videos.map((video) => (
+            <VideoMini key={video.id} video={video} />
+          ))}
+        </div>
+      </section>
+    );
+  
 };
 export default Videos;

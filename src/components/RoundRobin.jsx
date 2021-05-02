@@ -17,12 +17,10 @@ const RoundRobin = () => {
     game.win = win;
     game.draw1 = draw1;
     game.draw2 = draw2;
-    console.log(state);
     updateClasification(playersArray);
   };
   const [page, setPage] = useState(1);
   const changePage = (number) => () => {
-    console.log(rounds);
     if (page + number === 0) {
       setPage(rounds);
     } else if (page + number > rounds) {

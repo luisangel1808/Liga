@@ -15,33 +15,35 @@ import Tournament from '../containers/Tournament';
 import AdmPlayers from '../containers/AdmPlayers';
 import useGamesData from '../hooks/useGamesData';
 import Login from '../components/Login';
-import SignUp from '../components/SignUp';
 import '../styles/components/App.css';
+import PrivateRoute from '../components/PrivateRoute';
+import { AuthProvider } from '../hooks/Authentication';
+
 const App = () => {
   const initialState = useGamesData();
   return (
-    <AppContext.Provider value={initialState}>
-      <BrowserRouter>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/players" component={Players} />
-            <Route exact path="/videos" component={Videos} />
-            <Route exact path="/video/:id" component={Video} />
-            {/*<Route exact path="/clasification" component={Clasification} />*/}
-            <Route exact path="/clasification" component={ClasificationScrapped} />
-            <Route exact path="/lichess" component={Lichess} />
-            <Route exact path="/newTournament" component={NewTournament} />
-            <Route exact path="/tournament" component={Tournament} />
-            <Route exact path="/addSession" component={AddSession} />
-            <Route exact path="/admPlayers" component={AdmPlayers} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route component={NotFound} />
-          </Switch>
-        </Layout>
-      </BrowserRouter>
-    </AppContext.Provider>
+    <AuthProvider>
+        <AppContext.Provider value={initialState}>
+          <BrowserRouter>
+            <Layout>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/players" component={Players} />
+                <PrivateRoute exact path="/videos" component={Videos} />
+                <PrivateRoute exact path="/video/:id" component={Video} />
+                <Route exact path="/clasification" component={ClasificationScrapped} />
+                <PrivateRoute exact path="/lichess" component={Lichess} />
+                <PrivateRoute exact path="/newTournament" component={NewTournament} />
+                <PrivateRoute exact path="/tournament" component={Tournament} />
+                <PrivateRoute exact path="/addSession" component={AddSession} />
+                <PrivateRoute exact path="/admPlayers" component={AdmPlayers} />
+                <Route exact path="/login" component={Login} />
+                <Route component={NotFound} />
+              </Switch>
+            </Layout>
+          </BrowserRouter>
+        </AppContext.Provider>
+      </AuthProvider>
   );
 };
 

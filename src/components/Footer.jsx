@@ -3,9 +3,9 @@ import '../styles/components/Footer.css';
 
 const Footer = () => (
   <footer>
-    <a href="index.html">Términos y condiciones</a>
-    <a href="index.html">Contáctanos</a>
-    <a href="index.html">Más...</a>
+    <a href="https://www.facebook.com/ligacaucana.ajedrez">Términos y condiciones</a>
+    <a href="https://www.facebook.com/ligacaucana.ajedrez">Contáctanos</a>
+    <a href="https://www.facebook.com/ligacaucana.ajedrez">Más...</a>
   </footer>
 );
 

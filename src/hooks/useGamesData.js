@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import useOnePlayer from '../hooks/useOnePlayer';
 import {db} from '../firebase';
+import { watchUserChanges } from '../firebase/index';
 const useGamesData = () => {
   const [state, setState] = useState({
     games: [],
     players: [],
     playersList: [],
+    authReady: false,
+    isLoggedIn: false,
+    user: null,
   });
 
   const createFixture = (players) => {
@@ -24,10 +28,6 @@ const useGamesData = () => {
       ...state,
       players: playersCla,
     });
-  };
-
-  const addPlayersTournament = (payload) => {
-    setState({});
   };
 
   const addToPlayersList = async(payload) => {
@@ -144,6 +144,27 @@ const useGamesData = () => {
 
     return playersObject;
   };
+
+  useEffect(() => {
+    watchUserChanges((user)=>{
+        if(user){
+            setState({
+                ...state,
+                authReady:true,
+                isLoggedIn:true,
+                user,
+            });
+        }
+        else{
+            setState({
+                ...state,
+                authReady:true,
+                isLoggedIn:true,
+                user:null
+            });
+        }
+    })
+  }, [])
 
   return {
     state,

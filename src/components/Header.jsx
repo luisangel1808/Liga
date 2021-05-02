@@ -42,13 +42,13 @@ const Header = () => {
           <li className="item" onClick={() => setMenu(false)}>
             <Link to="/addSession">Sesiones</Link>
           </li>
-{/*       <li className="item" onClick={() => setMenu(false)}>
+        <li className="item" onClick={() => setMenu(false)}>
             <Link to="/login">
               <FontAwesomeIcon
                 icon={faUser}
               />
             </Link>
-          </li> */}
+          </li> 
           <li className="toggle">
             <FontAwesomeIcon
               icon={menu ? faTimes : faBars}

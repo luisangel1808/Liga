@@ -34,7 +34,7 @@ const [playersLichess, setPlayersLichess] = useState([]);
 useEffect(() => {
     getPlayers();
 }, []);
-console.log(playersLichess)
+
 const players =  usePlayersAxios(API,playersLichess);
   const dataTHead = ['Usuario', ' ', 'Nombre', 'Blitz', 'Bala', 'Partidas'];
   if(players.length>0){
