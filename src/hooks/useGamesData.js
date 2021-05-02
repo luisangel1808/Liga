@@ -31,19 +31,24 @@ const useGamesData = () => {
   };
 
   const addToPlayersList = async(payload) => {
-    const API = 'https://fide-ratings-scraper.herokuapp.com/player/';
-    const part2 = '/info';
-    const data = await useOnePlayer(API,payload.codFide,part2);
-    if (data) {
-      payload.standard_elo = data.standard_elo;
-      payload.rapid_elo = data.rapid_elo;
-      payload.blitz_elo = data.blitz_elo;
-      payload.name = data.name;
-      payload.sex = data.sex;
-      payload.birth_year = data.birth_year
-    }
     await db.collection('players').doc().set(payload);
   };
+
+  const validateCode = async(codFide)=>{
+    const API = 'https://fide-ratings-scraper.herokuapp.com/player/';
+    const part2 = '/info';
+    const data = await useOnePlayer(API,codFide,part2);
+    let player = {}
+    if (data) {
+      player.standard_elo = data.standard_elo;
+      player.rapid_elo = data.rapid_elo;
+      player.blitz_elo = data.blitz_elo;
+      player.name = data.name;
+      player.sex = data.sex;
+      player.birth_year = data.birth_year
+    }
+    return player;
+  }
 
   const addToPlayersListT = async(payload) => {
     if(!state.playersList.includes(payload)){
@@ -172,6 +177,7 @@ const useGamesData = () => {
     updateClasification,
     addToPlayersList,
     addToPlayersListT,
+    validateCode
   };
 };
 
