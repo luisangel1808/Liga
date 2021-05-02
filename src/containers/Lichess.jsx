@@ -36,7 +36,7 @@ useEffect(() => {
 }, []);
 
 const players =  usePlayersAxios(API,playersLichess);
-  const dataTHead = ['Usuario', ' ', 'Nombre', 'Blitz', 'Bala', 'Partidas'];
+  const dataTHead = ['Usuario', ' ', 'Nombre', 'Blitz', 'Bala', 'Táctica', 'Total Puzzles', 'Partidas'];
   if(players.length>0){
     return (
       <div className="Lichess">

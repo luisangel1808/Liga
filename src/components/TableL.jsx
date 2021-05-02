@@ -31,6 +31,8 @@ const TableL = ({ players, dataTHead }) => {
                 }`}</td>
                 <td>{player.perfs.blitz.rating}</td>
                 <td>{player.perfs.bullet.rating}</td>
+                <td>{player.perfs.puzzle.rating}</td>
+                <td>{player.perfs.puzzle.games}</td>
                 <td>
                   <a
                     href={`https://lichess.org/api/games/user/${player.username}`}
