@@ -2,8 +2,6 @@ import React, { useRef, useContext, useState } from 'react';
 import '../styles/components/AddPlayer.css';
 import AppContext from '../context/AppContext';
 import notification from '../utils/Toast';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 const addPlayer = () => {
   const [validate, setValidate] = useState(false);
   const [code, setCode] = useState(0);
@@ -52,9 +50,9 @@ const addPlayer = () => {
       picture: '',
       description: formData.get('description'),
       lichess: formData.get('lichess'),
-      standard_elo: formData.get('lichess')||player.standard_elo,
-      rapid_elo: formData.get('lichess')||player.rapid_elo,
-      blitz_elo: formData.get('lichess')||player.blitz_elo,
+      standard_elo: formData.get('standard_elo')||player.standard_elo,
+      rapid_elo: formData.get('rapid_elo')||player.rapid_elo,
+      blitz_elo: formData.get('blitz_elo')||player.blitz_elo,
     };
     if(newPlayer.name==''){
       alert('Ingrese un nombre');

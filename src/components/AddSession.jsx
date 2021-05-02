@@ -3,8 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import '../styles/components/AddSession.css';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import notification from '../utils/Toast';
 import {db} from '../firebase';
 import { faWindowClose} from '@fortawesome/free-solid-svg-icons';
 import { faEdit} from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +18,6 @@ const AddSession = () => {
     const [players, setPlayers] = useState([]);
     const [currentId, setCurrentId] = useState('');
 
-    toast.configure();
     const form = useRef(null);
 
     const handleSubmit = async (e) => {
@@ -34,15 +32,7 @@ const AddSession = () => {
         };
         setChoosed([]);
         await db.collection('sessions').doc().set(newSession);
-        toast('😜 Sesión añadida!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
+        notification('😜 Sesión añadida!')
       };  
     
     const getPlayers = async () =>{
@@ -75,15 +65,7 @@ const AddSession = () => {
     const deleteSession = async (id) =>{
 /*          if(window.confirm('Seguro que quieres borrar está sesión')){
              await db.collection('sessions').doc(id).delete();
-             toast('😜 Sesión eliminada!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                });
+             notification('😜 Sesión eliminada!')
          } */
         alert('No estás autorizado para borrar');
     }
