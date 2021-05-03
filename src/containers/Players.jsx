@@ -7,7 +7,7 @@ const Players = () => {
 
   return (
     <section className="Players">
-      <h1 className="Players-title-outstanding">Jugadores</h1>
+      <h1 className="Players-title-outstanding">Algunos Jugadores</h1>
       <div className="Players-container-outstanding">
         {players.map((player) => (
           <Player key={player.id} player={player} />

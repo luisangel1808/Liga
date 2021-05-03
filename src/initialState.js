@@ -64,6 +64,27 @@ export default {
   videos: [
     {
       id: 1,
+      title: 'Amarra a tu rival con el nudo de Maroczy',
+      image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
+      description: 'Un interesante plan estrátegico para crear un peón retrasado',
+      url: 'https://www.youtube.com/watch?v=5m7gEklHA6k',
+    },
+    {
+      id: 2,
+      title: 'Galopando a la defensa de los dos caballos',
+      image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
+      description: 'Enfrentando una variante agresiva pero dudosa',
+      url: 'https://www.youtube.com/watch?v=5m7gEklHA6k',
+    },
+    {
+      id: 3,
+      title: 'Derrumba al muro de piedra',
+      image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
+      description: 'En esta partida veremos algunas ideas para enfrentar a este esquema, (perdón por el eco)',
+      url: 'https://youtu.be/kKcTqtpjNV8',
+    }
+/*     {
+      id: 1,
       title: 'Derrumba al muro de piedra',
       image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
       description: 'En esta partida veremos algunas ideas para enfrentar a este esquema',
@@ -103,6 +124,6 @@ export default {
       image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
       description: 'Aprenderás todos los conceptos de esta defensa',
       url: 'https://youtu.be/kKcTqtpjNV8',
-    },
+    }, */
   ],
 };
