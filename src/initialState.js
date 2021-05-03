@@ -74,7 +74,7 @@ export default {
       title: 'Galopando a la defensa de los dos caballos',
       image: 'https://i.ibb.co/JjvWXyh/Luis.jpg',
       description: 'Enfrentando una variante agresiva pero dudosa',
-      url: 'https://www.youtube.com/watch?v=5m7gEklHA6k',
+      url: 'https://www.youtube.com/watch?v=1JSVBEBsiuc',
     },
     {
       id: 3,
