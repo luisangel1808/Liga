@@ -42,19 +42,19 @@ const addPlayer = () => {
     const formData = new FormData(form.current);
     const newPlayer = {
       name: formData.get('name')||player.name,
-      club: formData.get('club'),
-      league: formData.get('league'),
-      codFide: formData.get('fideCod')||code,
+      club: formData.get('club')||"",
+      league: formData.get('league')||"",
+      codFide: formData.get('fideCod')||code||"",
       sex: formData.get('sex')||player.sex,
       birth_year: formData.get('birth_year')||player.birth_year,
-      picture: '',
-      description: formData.get('description'),
-      lichess: formData.get('lichess'),
-      standard_elo: formData.get('standard_elo')||player.standard_elo,
-      rapid_elo: formData.get('rapid_elo')||player.rapid_elo,
-      blitz_elo: formData.get('blitz_elo')||player.blitz_elo,
+      picture: "",
+      description: formData.get('description')||"",
+      lichess: formData.get('lichess')||"",
+      standard_elo: formData.get('standard_elo')||player.standard_elo||"",
+      rapid_elo: formData.get('rapid_elo')||player.rapid_elo||"",
+      blitz_elo: formData.get('blitz_elo')||player.blitz_elo||"",
     };
-    if(newPlayer.name==''){
+    if(!newPlayer.name){
       alert('Ingrese un nombre');
     }
     else if(!(newPlayer.birth_year>1910&&newPlayer.birth_year<2017)){
