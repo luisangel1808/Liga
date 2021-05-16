@@ -26,9 +26,7 @@ const TableL = ({ players, dataTHead }) => {
                 <td>
                   <div className={`online-${player.online}`}></div>
                 </td>
-                <td>{`${player.profile.firstName || ''} ${
-                  player.profile.lastName || ''
-                }`}</td>
+                <td>{ player.profile? `${player.profile.firstName || ''} ${player.profile.lastName || ''}`: ''}</td>
                 <td>{player.perfs.blitz.rating}</td>
                 <td>{player.perfs.bullet.rating}</td>
                 <td>{player.perfs.puzzle.rating}</td>
