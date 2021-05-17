@@ -50,8 +50,8 @@ const TotalPlayers = () => {
                 <td>{player.rapid_elo}</td>
                 <td>{player.blitz_elo}</td>
                 <td>{player.birth_year}</td>
-                <td><FontAwesomeIcon icon={faWindowClose} onClick={()=>deleteSession(ses.id)}/></td>
-                <td><FontAwesomeIcon icon={faEdit} onClick={()=>setCurrentId(ses.id)}/></td>
+                <td><FontAwesomeIcon icon={faWindowClose}/></td>
+                <td><FontAwesomeIcon icon={faEdit}/></td>
               </tr>
             );
           })}

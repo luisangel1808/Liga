@@ -2,6 +2,8 @@ import React, { useRef, useContext, useState } from 'react';
 import '../styles/components/AddPlayer.css';
 import AppContext from '../context/AppContext';
 import notification from '../utils/Toast';
+import Modal from '../hooks/modal';
+import { AuthContext } from "../hooks/Authentication";
 const addPlayer = () => {
   const [validate, setValidate] = useState(false);
   const [code, setCode] = useState(0);
@@ -10,14 +12,16 @@ const addPlayer = () => {
 
   const { addToPlayersList,validateCode } = useContext(AppContext);
   const form = useRef(null);
-  
+  const modal = useRef(null);
+  const {currentUser} = useContext(AuthContext);
+  const authorizedUsers= ["adriamk2600@hotmail.com","luisangel1808@hotmail.com"];
 
   const validateC = async()=>{
    
       const pl = await validateCode(code);
       setValidate(true);
       setPlayer(pl);
-
+      modal.current.open();
       if(Object.keys(pl).length>0){
         setDisable(true);
         form.current[0].value =pl.name;
@@ -36,6 +40,7 @@ const addPlayer = () => {
     setValidate(true);
     setPlayer({});
     setDisable(false);  
+    modal.current.open();
 } 
 
   const handleSubmit = async() => {
@@ -86,6 +91,8 @@ const addPlayer = () => {
         <button type="button" onClick={validateN}>El jugador no tiene código Fide</button>
       </div>
       <a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" >Si no conoces el código Fide puedes buscarlo  <b>aquí</b></a>
+      <Modal ref={modal}>
+        <div className="AddPlayer">
       <form ref={form} className={`AddPlayer-${validate?"visible":"hide"}`} >
         <input
           type="text"
@@ -120,6 +127,8 @@ const addPlayer = () => {
           Registrar
         </button>
       </form>
+      </div>
+      </Modal>
     </section>
   );
 };
