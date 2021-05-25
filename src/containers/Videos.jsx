@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import initialState from '../initialState';
 import VideoMini from '../components/VideoMini';
 import '../styles/components/Videos.css';
-import AppContext from '../context/AppContext';
 
 const Videos = () => {
-  const { state } = useContext(AppContext);
   const [videos, setVideos] = useState(initialState.videos);
   const handleSearch = (value) => {
     let searched = initialState.videos.filter((video) =>

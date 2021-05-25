@@ -9,6 +9,8 @@ footer{
     background-color: whitesmoke;
     align-items: center;
     font-size: 1rem;
+    position: fixed;
+    bottom: 0;
 }
 footer a{
     text-decoration: none;

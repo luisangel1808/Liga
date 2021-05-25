@@ -16,6 +16,12 @@ const Header = () => {
         </Link>
         <ul className={`menu ${menu ? 'active' : 'inactive'}`}>
           <li className="item">
+            <Link to="/create-test" onClick={() => setMenu(false)}>
+              Crear Test
+            </Link>
+            <Link to="/tests" onClick={() => setMenu(false)}>
+              Test
+            </Link>
             <Link to="/videos" onClick={() => setMenu(false)}>
               Vídeos
             </Link>
@@ -34,21 +40,19 @@ const Header = () => {
             <Link to="/lichess">Datos Lichess</Link>
           </li>
           <li className="item" onClick={() => setMenu(false)}>
-            <Link to="/newTournament">Crear Torneo</Link>
+            <Link to="/new-tournament">Crear Torneo</Link>
           </li>
           <li className="item" onClick={() => setMenu(false)}>
-            <Link to="/admPlayers">Adm jugadores</Link>
+            <Link to="/adm-players">Adm jugadores</Link>
           </li>
           <li className="item" onClick={() => setMenu(false)}>
-            <Link to="/addSession">Sesiones</Link>
+            <Link to="/add-session">Sesiones</Link>
           </li>
-        <li className="item" onClick={() => setMenu(false)}>
+          <li className="item" onClick={() => setMenu(false)}>
             <Link to="/login">
-              <FontAwesomeIcon
-                icon={faUser}
-              />
+              <FontAwesomeIcon icon={faUser} />
             </Link>
-          </li> 
+          </li>
           <li className="toggle">
             <FontAwesomeIcon
               icon={menu ? faTimes : faBars}

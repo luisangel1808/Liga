@@ -1,7 +1,5 @@
 .FideTable{
-    position: relative;
-    margin-top: 60px;
-    min-height: inherit;
+    margin-block: 60px;
 }
 caption{
    font-size: 26px;
@@ -14,7 +12,8 @@ table{
    
    table-layout: fixed;
    border-collapse: collapse;
-   text-align: left;       
+   text-align: left;  
+        
 }
   
 table a{

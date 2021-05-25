@@ -1,0 +1,21 @@
+.CreateTest{
+    margin-block: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.CreateTest form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.CreateTest input{
+    margin: 5px;
+    width: 50vw;
+}
+.CreateTest button{
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: antiquewhite;
+}

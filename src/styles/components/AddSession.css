@@ -1,7 +1,5 @@
 .AddSession{
-    position: relative;
-    margin-top: 60px;
-    min-height: inherit;
+    margin-block: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;

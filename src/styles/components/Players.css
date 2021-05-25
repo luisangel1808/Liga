@@ -1,8 +1,5 @@
 .Players{
-    position: relative;
-    margin-bottom: 10px;
-    width: 100%;
-    min-height: 100%;
+    margin-block: 60px;
 }
 .Players-container-outstanding{
     margin: 5px;

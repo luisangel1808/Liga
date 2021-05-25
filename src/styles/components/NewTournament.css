@@ -1,6 +1,6 @@
 .NewTournament{
     position: relative;
-    margin-top: 80px;
+    margin-block: 60px;
     width: 100%;
     min-height: 90vh;
     display:flex;
