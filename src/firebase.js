@@ -6,13 +6,14 @@
   import *  as firebaseui from "firebaseui"
 
   const firebaseConfig = {
-    apiKey: "AIzaSyAI7z3y0VSclseQzGHdhkAyY1La2Dz-7hY",
-    authDomain: "licajedrez.firebaseapp.com",
-    databaseURL: "https://licajedrez-default-rtdb.firebaseio.com",
-    projectId: "licajedrez",
-    storageBucket: "licajedrez.appspot.com",
-    messagingSenderId: "140936602564",
-    appId: "1:140936602564:web:6e10bbaa6a9fc7bf833a91"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    
   };
   // Initialize Firebase
   const fb = firebase.initializeApp(firebaseConfig);

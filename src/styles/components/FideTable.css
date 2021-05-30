@@ -1,5 +1,7 @@
 .FideTable{
     margin-block: 60px;
+    display: flex;
+    justify-content: center;
 }
 caption{
    font-size: 26px;
@@ -9,12 +11,13 @@ caption{
 }
   
 table{    
-   
-   table-layout: fixed;
+   margin: 10px;
    border-collapse: collapse;
-   text-align: left;  
-        
-}
+   display: block;
+   text-align: left;       
+   overflow-x: auto;
+   width: 90vw;
+ }
   
 table a{
    text-decoration: none;
@@ -67,4 +70,14 @@ tbody tr:nth-child(even) {
     
 tbody tr:nth-child(odd) {
    background-color:#FFF;
+}
+
+.black{
+   color:black;
+   cursor:pointer;
+}
+
+.gold{
+   background-color:gold;
+   cursor:pointer;
 }
