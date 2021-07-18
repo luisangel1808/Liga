@@ -1,6 +1,6 @@
 .Home {
     min-height: inherit;
-    margin-top: 50px;
+    margin-block: 8vh;
     width: 100%;
     display: flex;
     flex-direction: column;
